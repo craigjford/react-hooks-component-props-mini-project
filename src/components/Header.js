@@ -1,12 +1,11 @@
-import React from "react";
+import React from 'react'
 
 function Header({ name }) {
-    const nameStr = {name}
-    console.log('in Header ', nameStr);
-    return (
+  return (
     <header>
         <h1>{name}</h1>
-    </header>)
+    </header>
+  )
 }
 
-export default Header;
+export default Header

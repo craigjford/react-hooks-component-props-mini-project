@@ -1,33 +1,33 @@
 import React from 'react'
 
-function Article({ title, preview, minutes, date="January 1, 1970"}) {
-    
-    const coffeeIcon = "☕"
-    const boxIcon = "🍱";
-    //let cupNumber = 0;
-    let coffeeStr = "";
+function Article({ title, date="January 1, 1970", preview, minutes}) {
 
+    const mugImage = "☕️";
+    const bentoImage = "🍱"
+    let imageCtr = 0;
+    let mugString = ""
 
-    if (minutes > 29) {
-        const cupNumber = (minutes / 10) + 1
-        for(let i = 1; i < cupNumber + 1; i++) {
-            coffeeStr = coffeeStr + boxIcon
-        }       
+    if (minutes < 30) {
+        imageCtr = Math.ceil(minutes / 5);
+        for (let i = 0; i < imageCtr; i++) {
+            mugString = mugString + mugImage;
+        }
     } else {
-        const cupNumber = (minutes / 5) + 1
-        for(let i = 1; i < cupNumber + 1; i++) {
-            coffeeStr = coffeeStr + coffeeIcon
+        imageCtr = Math.ceil(minutes / 10);
+        for (let i = 0; i < imageCtr; i++) {
+            mugString = mugString + bentoImage;
         }
     }
-    console.log('coffee = ', coffeeStr)
+
+    mugString = mugString + " " + minutes + " min read";
 
   return (
     <article>
-        <h3>{ title }</h3>
-        <small>{ date } - { coffeeStr } { minutes } min read</small>
-        <p>{ preview }</p>
-    </article>
+        <h3>{title}</h3>
+        <small>{date} - {mugString}</small>
+        <p>{preview}</p>
+    </article>        
   )
 }
 
-export default Article
+export default Article;

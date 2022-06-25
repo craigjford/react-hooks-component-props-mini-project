@@ -1,10 +1,9 @@
 import React from "react";
-import Header from "./Header";
-import About from "./About"
-import ArticleList from "./ArticleList"; 
 import blogData from "../data/blog";
+import Header from "./Header";
+import About from "./About";
+import ArticleList from "./ArticleList";
 
-console.log(blogData);
 
 function App() {
   return (
@@ -17,4 +16,5 @@ function App() {
 }
 
 export default App;
+
 
